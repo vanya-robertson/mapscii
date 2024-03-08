@@ -228,19 +228,19 @@ class Mapscii {
         this.zoomBy(-config.zoomStep);
         break;
       case 'left':
-      case 'h':
+      case 'i':
         this.moveBy(0, -8/Math.pow(2, this.zoom));
         break;
       case 'right':
-      case 'l':
+      case 'o':
         this.moveBy(0, 8/Math.pow(2, this.zoom));
         break;
       case 'up':
-      case 'k':
+      case 'e':
         this.moveBy(6/Math.pow(2, this.zoom), 0);
         break;
       case 'down':
-      case 'j':
+      case 'n':
         this.moveBy(-6/Math.pow(2, this.zoom), 0);
         break;
       case 'c':
