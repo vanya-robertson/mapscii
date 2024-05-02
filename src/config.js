@@ -20,7 +20,7 @@ module.exports = {
   initialLat: 52.51298,
   initialLon: 13.42012,
 
-  simplifyPolylines: false,
+  simplifyPolylines: true,
 
   useBraille: true,
 

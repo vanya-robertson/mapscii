@@ -8,6 +8,7 @@
 const fs = require('fs');
 const keypress = require('keypress');
 const TermMouse = require('term-mouse');
+const clipboard = require("copy-paste").global()
 
 const Renderer = require('./Renderer');
 const TileSource = require('./TileSource');
@@ -220,11 +221,10 @@ class Mapscii {
           process.exit(0);
         }
         break;
-      case 'a':
+      case 't':
         this.zoomBy(config.zoomStep);
         break;
-      case 'y':
-      case 'z':
+      case 'h':
         this.zoomBy(-config.zoomStep);
         break;
       case 'left':
@@ -243,11 +243,18 @@ class Mapscii {
       case 'n':
         this.moveBy(-6/Math.pow(2, this.zoom), 0);
         break;
-      case 'c':
+      case 'b':
         config.useBraille = !config.useBraille;
         break;
+      case 'c':
+	let coordinates = `${utils.digits(this.center.lat, 3)}, ${utils.digits(this.center.lon, 3)}`;
+	copy(coordinates);
+	break;
       default:
         draw = false;
+//	copy centre screen
+//	require('clipboardy').writeSync()
+//	${utils.digits(this.center.lat, 3)}, ${utils.digits(this.center.lon, 3)
     }
 
     if (draw) {
