@@ -247,8 +247,12 @@ class Mapscii {
         config.useBraille = !config.useBraille;
         break;
       case 'c':
-	let coordinates = `${utils.digits(this.center.lat, 3)}, ${utils.digits(this.center.lon, 3)}`;
-	copy(coordinates);
+	let center_coordinates = `${utils.digits(this.center.lat, 3)}, ${utils.digits(this.center.lon, 3)}`;
+	copy(center_coordinates);
+	break;
+      case 'm':
+	let mouse_coordinates = `${utils.digits(this.mousePosition.lat, 3)}, ${utils.digits(this.mousePosition.lon, 3)}`;
+	copy(mouse_coordinates);
 	break;
       default:
         draw = false;
